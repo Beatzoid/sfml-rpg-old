@@ -3,7 +3,27 @@
 // Initialization Functions
 void Game::initWindow()
 {
-	this->window = new sf::RenderWindow(sf::VideoMode(800, 600), "C++ SFML RPG");
+
+    std::ifstream ifs("Config/window.ini");
+
+    std::string title = "None";
+    sf::VideoMode window_bounds(800, 600);
+    unsigned framelate_limit = 120;
+    bool verticle_sync_enabled = false;
+
+    if (ifs.is_open())
+    {
+        std::getline(ifs, title);
+        ifs >> window_bounds.width >> window_bounds.height;
+        ifs >> framelate_limit;
+        ifs >> verticle_sync_enabled;
+    }
+    
+    ifs.close();
+
+	this->window = new sf::RenderWindow(window_bounds, title);
+    this->window->setFramerateLimit(framelate_limit);
+    this->window->setVerticalSyncEnabled(verticle_sync_enabled);
 }
 
 // Constructors/Destructors
