@@ -146,12 +146,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="States\GameState.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="State.cpp" />
+    <ClCompile Include="States\State.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h" />
-    <ClInclude Include="State.h" />
+    <ClInclude Include="States\GameState.h" />
+    <ClInclude Include="States\State.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

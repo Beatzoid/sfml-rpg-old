@@ -1,6 +1,6 @@
 #pragma once
 
-#include"State.h"
+#include"States/GameState.h"
 
 class Game
 {
@@ -13,8 +13,11 @@ private:
 	// Delta Time
 	float dt;
 
+	std::stack<State*> states;
+
 	// Initialization
 	void initWindow();
+	void initStates();
 
 public:
 	// Constructors/Destructors

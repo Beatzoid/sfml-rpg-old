@@ -21,7 +21,10 @@
     <ClCompile Include="Game.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="State.cpp">
+    <ClCompile Include="States\State.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="States\GameState.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -29,7 +32,10 @@
     <ClInclude Include="Game.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="State.h">
+    <ClInclude Include="States\State.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="States\GameState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
