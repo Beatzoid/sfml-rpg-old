@@ -53,5 +53,4 @@ void Game::run()
         this->update();
         this->render();
     }
-
 }

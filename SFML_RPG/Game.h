@@ -4,7 +4,6 @@
 
 class Game
 {
-
 private:
 	// Variables
 	sf::RenderWindow *window;
@@ -28,6 +27,5 @@ public:
 	void update();
 	void render();
 	void run();
-
 };
 
