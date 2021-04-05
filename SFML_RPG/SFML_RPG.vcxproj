@@ -145,16 +145,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Entity.cpp" />
-    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="Entities\Entity.cpp" />
+    <ClCompile Include="Core\Game.cpp" />
     <ClCompile Include="States\MainMenuState.cpp" />
     <ClCompile Include="States\GameState.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="States\State.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Entity.h" />
-    <ClInclude Include="Game.h" />
+    <ClInclude Include="Entities\Entity.h" />
+    <ClInclude Include="Core\Game.h" />
     <ClInclude Include="States\MainMenuState.h" />
     <ClInclude Include="States\GameState.h" />
     <ClInclude Include="States\State.h" />
