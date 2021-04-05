@@ -1,5 +1,13 @@
 #include "MainMenuState.h"
 
+void MainMenuState::initFonts()
+{
+	if (!this->font.loadFromFile("Fonts/Dosis-Light.ttf"))
+	{
+		throw("ERROR::MAINMENUSTATE::COULD NOT LOAD FONT");
+	}
+}
+
 void MainMenuState::initKeybinds()
 {
 	std::ifstream ifs("Config/gamestate_keybinds.ini");
@@ -21,6 +29,7 @@ void MainMenuState::initKeybinds()
 MainMenuState::MainMenuState(sf::RenderWindow* window, std::map<std::string, int>* supportedKeys)
 	: State(window, supportedKeys)
 {
+	this->initFonts();
 	this->initKeybinds();
 
 	this->background.setSize(sf::Vector2f(window->getSize().x, window->getSize().y));
@@ -44,6 +53,7 @@ void MainMenuState::updateInput(const float& dt)
 
 void MainMenuState::update(const float& dt)
 {
+	this->updateMousePositions();
 	this->updateInput(dt);
 }
 
