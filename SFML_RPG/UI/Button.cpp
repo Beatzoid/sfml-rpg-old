@@ -35,7 +35,10 @@ Button::~Button()
 // Getters
 const bool Button::isPressed() const
 {
-	return this->buttonState == BTN_ACTIVE;
+	if (this->buttonState == BTN_ACTIVE)
+		return true;
+
+	return false;
 }
 
 // Functions
