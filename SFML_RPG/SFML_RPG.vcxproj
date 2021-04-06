@@ -167,6 +167,10 @@
     <None Include="Config\supported_keys.ini" />
     <None Include="Config\window.ini" />
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="Resources\Images\Backgrounds\bg1.png" />
+    <Image Include="Resources\Images\Backgrounds\bg2.png" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
