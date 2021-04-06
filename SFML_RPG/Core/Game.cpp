@@ -1,27 +1,47 @@
 #include "Game.h"
 
+
+
 // Initialization Functions
+void Game::initVariables()
+{
+    this->window = NULL;
+    this->fullscreen = false;
+    this->dt = 0.f;
+}
+
 void Game::initWindow()
 {
 
     std::ifstream ifs("Config/window.ini");
+    this->videoModes = sf::VideoMode::getFullscreenModes();
 
     std::string title = "None";
-    sf::VideoMode window_bounds(800, 600);
+    sf::VideoMode window_bounds = sf::VideoMode::getDesktopMode();
+    bool fullscreen = false;
     unsigned framelate_limit = 120;
     bool verticle_sync_enabled = false;
+    unsigned antialiasingLevel = 0;
 
     if (ifs.is_open())
     {
         std::getline(ifs, title);
         ifs >> window_bounds.width >> window_bounds.height;
+        ifs >> fullscreen;
         ifs >> framelate_limit;
         ifs >> verticle_sync_enabled;
+        ifs >> antialiasingLevel;
     }
     
     ifs.close();
 
-	this->window = new sf::RenderWindow(window_bounds, title);
+    this->fullscreen = fullscreen;
+    this->windowSettings.antialiasingLevel = antialiasingLevel;
+    if (this->fullscreen)
+        this->window = new sf::RenderWindow(window_bounds, title, sf::Style::Fullscreen, this->windowSettings);
+    else
+        this->window = new sf::RenderWindow(window_bounds, title, sf::Style::Titlebar | sf::Style::Close, this->windowSettings);
+
     this->window->setFramerateLimit(framelate_limit);
     this->window->setVerticalSyncEnabled(verticle_sync_enabled);
 }
