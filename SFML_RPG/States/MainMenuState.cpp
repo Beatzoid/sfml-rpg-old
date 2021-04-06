@@ -10,7 +10,7 @@ void MainMenuState::initFonts()
 
 void MainMenuState::initKeybinds()
 {
-	std::ifstream ifs("Config/gamestate_keybinds.ini");
+	std::ifstream ifs("Config/mainmenustate_keybinds.ini");
 
 	if (ifs.is_open())
 	{
@@ -39,8 +39,8 @@ void MainMenuState::initButtons()
 	);
 }
 
-MainMenuState::MainMenuState(sf::RenderWindow* window, std::map<std::string, int>* supportedKeys)
-	: State(window, supportedKeys)
+MainMenuState::MainMenuState(sf::RenderWindow* window, std::map<std::string, int>* supportedKeys, std::stack<State*>* states)
+	: State(window, supportedKeys, states)
 {
 	this->initFonts();
 	this->initKeybinds();
@@ -79,7 +79,7 @@ void MainMenuState::updateButtons()
 	// Start the game
 	if (this->buttons["GAME_STATE"]->isPressed())
 	{
-		// TODO: Start Game
+		this->states->push(new GameState(this->window, this->supportedKeys, this->states));
 	}
 
 	// Quit the game

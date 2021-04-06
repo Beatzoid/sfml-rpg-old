@@ -163,6 +163,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Config\gamestate_keybinds.ini" />
+    <None Include="Config\mainmenustate_keybinds.ini" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
